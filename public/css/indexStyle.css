@@ -1,5 +1,6 @@
 main{
-    height: 50vh;
+  height: 70vh;
+
 }
 main section{
     width: 960px;
@@ -10,4 +11,9 @@ main section{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+li a:link, li svg, li a:visited {
+    color: white;
+    text-decoration: none;
 }

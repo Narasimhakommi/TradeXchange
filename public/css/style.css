@@ -1,12 +1,4 @@
-
-/* .main_head{
-    height:50vh;
-    background-image: url("https://source.unsplash.com/Im7lZjxeLhg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.8;
-    background-attachment: fixed;
-} */
+@charset "UTF-8";
 
 /* article , aside , footer , header , main , nav , section {
     display: block;
@@ -20,13 +12,13 @@
     font-family: sans-serif;
 }
 
-.main_head{
+.banner{
     background-color: rgb(60,90,130);
     padding : 10px 20px;
 }
 
 .logo{
-    font-size: 280%;
+    font-size: 230%;
     color: whitesmoke;
     text-decoration: none;
     font-family: Georgia, serif;;
@@ -42,26 +34,26 @@ body{
 
 li{
     display: inline;
-    color: white;
+    font-size: 130%;
+    color: whitesmoke;
 }
 li a{
-    color: white;
+    color: whitesmoke;
 }
-
-.user_header{
+.userHeader{
     display: inline;
 }
 
-.user_navigation{
+.userSpecNavigation{
     padding-top: 20px;
     float: right;
 }
 
-.user_navigation a{
+.userSpecNavigation a{
     text-decoration: none;
 }
 
-.user_navigation ul li{
+.userSpecNavigation ul li{
     margin-right: 1rem;
 }
 
@@ -80,13 +72,14 @@ li a{
 
 
 
+
 .productImage{
     width: 150px;
     height: 180px;
 }
 
 footer{
-    height: 5vh;
+    height: 8vh;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -116,7 +109,7 @@ footer .footer_cp p{
 section h1{
     margin-bottom: 2rem;
     font-family: sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 section{
     width: 100%;
@@ -124,6 +117,7 @@ section{
 }
 section .main_description{
     font-family: sans-serif;
+    font-size: 1rem;
     
 }
 
