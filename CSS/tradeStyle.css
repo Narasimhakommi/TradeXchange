@@ -1,0 +1,44 @@
+main{
+    display: flex;
+    padding: 2rem;
+}
+.image{
+    display: flex;
+    align-items: center;
+}
+.image img{
+    margin-right: 3rem;
+    height: 12rem;
+    width: auto;
+}
+.product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto 2rem auto;
+}
+
+.image p{
+    font-size: 2rem;
+}
+
+.interested{
+    height: 100%;
+}
+
+
+
+.details{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.details h2{
+    margin-bottom: 1rem;
+}
+
+.details p{
+    text-align: justify;
+    line-height: 1.6rem;
+}
