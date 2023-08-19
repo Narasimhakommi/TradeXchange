@@ -1,10 +1,10 @@
 # TradeXchange - Your One-Stop Tech Trading Platform
 
-# Software requirements
+## Software requirements
 1. VSCode
 2. Nodejs
 
-# Used Packages
+## Used Packages
 
 1. nodemon : ^2.0.20
 1. bcrypt : ^5.1.0
@@ -21,12 +21,12 @@
 13. morgan : ^1.10.0
 
 
-# Steps to run the project
+## Steps to run the project
 
 1. Clone the Githib repository
 2. Install the required packages from packages.json by using npm install
 3. start running the application by using nodemon start
 
-#  Introduction
+##  Introduction
 
 Tradexchange is an online platform designed to connect tech enthusiasts and users who want to trade laptops, mobile devices, and accessories seamlessly. Whether you're looking to upgrade your gadgets or find a new home for your old tech, Tradexchange offers a user-friendly interface and robust features to make tech trading easy and secure.
