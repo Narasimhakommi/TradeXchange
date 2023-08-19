@@ -30,3 +30,42 @@
 ##  Introduction
 
 Tradexchange is an online platform designed to connect tech enthusiasts and users who want to trade laptops, mobile devices, and accessories seamlessly. Whether you're looking to upgrade your gadgets or find a new home for your old tech, Tradexchange offers a user-friendly interface and robust features to make tech trading easy and secure.
+
+## Architecture
+
+### Architecture Diagram:
+
+![Screenshot](architecture11.png)
+
+## Key Features
+### Home page :
+Upon visiting Tradexchange, users are greeted with a well-organized homepage. The homepage features a brief description of the platform's purpose and benefits. It also highlights key functionalities and the latest trades.
+
+### User Authentication :
+To access Tradexchange's full suite of features, users must create an account or log in. User authentication ensures the security and privacy of each user's profile and trade history.
+
+### user Profiles:
+
+Upon registration, users can create and personalize their profiles. Profiles include details such as username, profile picture, location, and a bio.
+
+### Viewing Available Trades:
+
+After logging in, users can browse multiple available trades. Trades are categorized by product type, condition (new or used), and location.Users can filter trades based on their preferences.
+
+### Creating a New Trade:
+
+Users can post their own trades by providing detailed listings. Listing details include product name, description, condition, photos, and desired items in return. Users can set preferences for trade conditions (e.g., local pickup only or shipping allowed).
+
+### Trade Requests:
+
+Interested users can send trade requests to the posters of the trades. Trade requests include a message outlining the proposed exchange. Users can negotiate the terms of the trade within the messaging system.
+
+
+
+### Future Enhancements:
+
+* Implement a search functionality to help users find specific products more easily.
+* Add a reporting system for any suspicious or inappropriate listings.
+* Integrate a payment system for trading high-value items securely.
+* Develop mobile apps for iOS and Android platforms to expand the user base.
+* Explore the possibility of expanding into other tech-related categories such as gaming consoles and smart home devices.
