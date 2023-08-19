@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const tradeRoutes = require("./routes/tradeRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes = require("./routes/userRoutes");
+const transactionRoutes = require("./routes/transactionRoutes");
 const methodOverride = require("method-override");
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -19,7 +20,7 @@ let host = "localhost";
 app.set("view engine", "ejs");
 
 //connect to database
-mongoose.connect('mongodb://localhost:27017/starktechnologies',{useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect('mongodb://localhost:27017/forextechnologies',{useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>{
     app.listen(port, host, ()=>{
         console.log('Server is running on port', port);
@@ -32,10 +33,10 @@ mongoose.connect('mongodb://localhost:27017/starktechnologies',{useNewUrlParser:
 //mount middleware
 app.use(
   session({
-      secret: "ajfeirf90aeu9eroejfoefj",
+      secret: "kjfenyj90aeu9eroejfoefj",
       resave: false,
       saveUninitialized: false,
-      store: new MongoStore({mongoUrl: 'mongodb://localhost:27017/starktechnologies'}),
+      store: new MongoStore({mongoUrl: 'mongodb://localhost:27017/forextechnologies'}),
       cookie: {maxAge: 60*60*1000}
       })
 );
@@ -58,6 +59,7 @@ app.use(methodOverride("_method"));
 app.use("/",mainRoutes);
 app.use("/trades", tradeRoutes);
 app.use('/users', userRoutes);
+app.use('/transaction', transactionRoutes);
 
 app.use((req, res, next) => {
   let err = new Error("The server cannot locate " + req.url);

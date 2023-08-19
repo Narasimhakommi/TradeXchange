@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/tradeController");
 const{isLoggedIn, isAuthor} = require('../middlewares/auth');
-const{isValidId} = require('../middlewares/validator');
+const{isValidId,isValidIdsforTransac} = require('../middlewares/validator');
 
 
 //GET /trades : send all trades

@@ -1,11 +1,18 @@
 .welcome{
     text-align: center;
     margin: 10px;
+    
 }
+main {
+    padding: 2rem;
+    height: 90vh;
+  }
+
 
 .trade{
     text-align: center;
     margin: 2px;
+    
 }
 
 .tradelist{
@@ -13,3 +20,13 @@
     text-decoration: underline;
     display: block;
 }
+
+table, th, td {
+    border:1px solid black;
+    
+  }
+
+  table {
+    width: 60%;
+   
+  }
