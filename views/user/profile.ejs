@@ -1,0 +1,20 @@
+<%- include('../partials/header.ejs')%>
+<link rel="stylesheet" href="/css/profileStyle.css" />
+<div class = "content">
+    <h5 class="welcome">Welcome, <%=user.firstName%> <%= user.lastName %></h5>
+    </div>
+    <div >
+        <% if(trades.length){ %>
+            <h2>Your Trades</h2>
+                <% trades.forEach(trade => { %> 
+                   <a class="tradelist" href="/trades/<%= trade.id %>"><%=trade.name%></a>               
+            <% })
+        }
+        else { %>
+            <div>
+                you have no Trades.
+            </div>
+        <% }
+        %>
+    </div>
+    <%- include('../partials/footer.ejs')%>

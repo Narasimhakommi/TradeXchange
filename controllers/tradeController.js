@@ -28,9 +28,8 @@ exports.new = (req, res) => {
 //POST /trades : create a new trade
 exports.create = (req, res) => {
   let trade = new model(req.body);
-  trade.createdBy = "Narasimha Naidu";
+  trade.createdBy = req.session.user;
   trade.status = "available";
-  trade.imageURL = "test";
   console.log(trade);
   trade.save(trade)
   .then(trade => res.redirect("/trades"))
@@ -46,11 +45,6 @@ exports.create = (req, res) => {
 //GET /trades/:id : send a trade identified by id.
 exports.show = (req, res, next) => {
   let id = req.params.id;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)){
-        let err = new Error('Invalid input ID');
-        err.status = 400;
-        next(err);
-    }
   model.findById(id)
   .then(trade => {
     if(trade){
@@ -71,11 +65,6 @@ exports.show = (req, res, next) => {
 //GET /trades/:id/edit : send html form for editing the trade.
 exports.edit = (req, res, next) => {
   let id = req.params.id;
-    if(!id.match(/^[0-9a-fA-F]{24}$/)){
-        let err = new Error('Invalid input ID');
-        err.status = 400;
-        next(err);
-    }
   model.findById(id)
   .then(trade => {
     if (trade) {
@@ -95,12 +84,6 @@ exports.update = (req, res, next) => {
   let trade = req.body;
   let id = req.params.id;
 
-  if(!id.match(/^[0-9a-fA-F]{24}$/)){
-      let err = new Error('Invalid input ID');
-      err.status = 400;
-      next(err);
-  }
-
   model.findByIdAndUpdate(id, trade, {useFindAndModify : false, runValidators : true})
   .then(trade =>{
       if(trade){
@@ -115,6 +98,8 @@ exports.update = (req, res, next) => {
   .catch(err => {
       if(err.name == 'ValidationError'){
           err.status = 400;
+          req.flash("error",err.message);
+          res.redirect("back");
       }
       next(err)});
 };
@@ -122,13 +107,6 @@ exports.update = (req, res, next) => {
 //DELETE /trades/:id  : delete the trade identified by id
 exports.delete = (req, res, next) => {
   let id = req.params.id;
-
-  if(!id.match(/^[0-9a-fA-F]{24}$/)){
-      let err = new Error('Invalid input ID');
-      err.status = 400;
-      next(err);
-  }
-
   model.findByIdAndDelete(id, {useFindAndModify : false})
   .then(trade => {
       if(trade){

@@ -15,11 +15,35 @@
         <nav class="userSpecNavigation">
           <ul>
             <li class=""><a href="/trades">Available Trades</a></li>
-            <li><a href="/trades/newTrade">Start Trading</a></li>
-            <li>Login</li>
-            <li>Sign Up</li>
+            <% if(!user) {%>
+              <li><a href='/users/new'>Sign Up</a></li>
+              <li><a href='/users/login'>Login</a></li>
+              <% } else { %> 
+              <li><a href="/trades/newTrade">Start Trading</a></li>
+              <li><a href='/users/profile'>Profile</a></li>
+              <li><a href='/users/logout'>Logout</a></li>
+              <% } %>
+              
           </ul>
         </nav>
       </div>
 
     </header>
+
+
+    <% if(errorMessages.length > 0) {%>
+      <% errorMessages.forEach(message=>{%>
+          <div class='error'>
+              <%=message%>
+          </div>
+          <%});%>
+              <%}%>
+  
+                  <% if(successMessages.length > 0) {%>
+  
+                      <% successMessages.forEach(message=>{%>
+                          <div class='success'>
+                              <%=message%>
+                          </div>
+                          <%});%>
+                              <%}%>

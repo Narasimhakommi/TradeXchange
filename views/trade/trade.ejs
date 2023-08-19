@@ -12,6 +12,7 @@
       <h6> <%= trade.name  %></h6>
     </div>
     <div>
+      <% if(user == trade.createdBy._id) { %>
       <form>
         <input value="Edit" type="submit"
         formmethod="PUT"
@@ -21,15 +22,15 @@
         formmethod="POST"
         formaction="/trades/<%= trade._id%>?_method=DELETE"/>
       </form>
-
+      <% } %>
     </div>
 
   </section>
   <section class="details">
     <div class="interested">
       <p>Are you intrested?</p>
-      <input type="button" value="yes" />
-      <input type="button" value="no" />
+      <input type="button" value="Yes" style="background-color: green"/>
+      <input type="button" value="No" style="background-color: red"/>
     </div>
     <h2>Details:</h2>
     <p>
