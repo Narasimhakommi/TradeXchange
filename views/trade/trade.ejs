@@ -15,11 +15,11 @@
       <form>
         <input value="Edit" type="submit"
         formmethod="PUT"
-        formaction="/trades/<%= trade.id%>/edit"/>
+        formaction="/trades/<%= trade._id%>/edit"/>
         
         <input value="Delete" type="submit"
         formmethod="POST"
-        formaction="/trades/<%= trade.id%>?_method=DELETE"/>
+        formaction="/trades/<%= trade._id%>?_method=DELETE"/>
       </form>
 
     </div>

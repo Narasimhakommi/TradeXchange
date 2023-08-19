@@ -8,7 +8,7 @@
         <div class="category__list">
           <% trades.filter(trade => trade.category == category).forEach(trade =>{ %>
             <article>
-              <a href="./trades/<%= trade.id %>"><h5><%= trade.productType %></h5></a>
+              <a href="./trades/<%= trade._id %>"><h5><%= trade.productType %></h5></a>
             </article>
           <% }); %>
         </div>
